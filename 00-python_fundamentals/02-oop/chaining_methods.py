@@ -21,7 +21,6 @@ class User:
     def enroll(self):
         self.is_reward_member = True
         self.gold_card_points = 200
-        
         return self
     
         if self.is_reward_member == True:
@@ -35,8 +34,7 @@ class User:
             self.gold_card_points -= amount
             print(f"You just spent {amount} points. Your balance is now {self.gold_card_points}.")
         else:
-            print(f"Your balance is {self.gold_card_points} points. You don't have enough to spend {amount} points.")
-            
+            print(f"Your balance is {self.gold_card_points} points. You don't have enough to spend {amount} points.") 
         return self
         
 User1 = User("Henry", "Chen", "henrychen14505@gmail.com", 39)
