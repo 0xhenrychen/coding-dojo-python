@@ -1,3 +1,7 @@
+# SENSEI BONUS: Allow a user to have multiple accounts; update methods so the user has to specify which account they are withdrawing or depositing to
+
+# SENPAI BONUS: Add a transfer_money(self, amount, other_user) method to the user class that takes an amount and a different User instance, and transfers money from the user's account into another user's account.
+
 class BankAccount:
     all_accounts = []
     # Creates a new instance of this class, i.e. a new bank account.
@@ -45,13 +49,15 @@ class BankAccount:
             
             
 class User:
-    def __init__(self, name, email):
+    def __init__(self, name, email, account_number):
         self.name = name
         self.email = email
+        self.account_number = account_number
         self.account = BankAccount(int_rate=0.02, balance=0)
 
-    def make_deposit(self, amount):
-        self.account.deposit(amount)
+    def make_deposit(self, amount, account_number):
+        if account_number == "1":
+            self.account.deposit(amount)
         
     def make_withdrawal(self, amount):
         self.account.withdraw(amount)
@@ -59,9 +65,12 @@ class User:
     def display_user_balance(self):
         self.account.display_account_info()
             
-User1 = User("Henry Chen", "henrychen14505@gmail.com")
-User1.display_user_balance()
-User1.make_deposit(100)
-User1.display_user_balance()
-User1.make_withdrawal(35)
-User1.display_user_balance()
+
+# User1.display_user_balance()
+# User1.make_deposit(100)
+# User1.display_user_balance()
+# User1.make_withdrawal(35)
+# User1.display_user_balance()
+
+User1 = User("Henry Chen", "henrychen14505@gmail.com", "1")
+User2 = User("Henry Chen", "henrychenphotography@gmail.com", "2")
