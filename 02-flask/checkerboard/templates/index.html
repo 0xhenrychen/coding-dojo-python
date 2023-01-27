@@ -4,14 +4,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Checkerboard</title>
 </head>
 <body>
     <h1>***Checkerboard***</h1>
 
-    <p>Testing to see if the static folder structure works.</p>
+    <table>
+        {% for i in range(0, num_rows_half) %}
+            <tr>
+            {% for j in range(0, num_cols_half) %}
+                <td class="table-color_1" style="background-color: {{color_1}};"></td>
+                <td class="table-color_2" style="background-color: {{color_2}};"></td>
+            {% endfor %}
+            
+            {% if num_cols % 2 != 0 %}
+                <td class="table-color_1" style="background-color: {{color_1}};"></td>
+            {%endif %}
+            </tr>
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+            <tr>
+            {% for j in range(0, num_cols_half) %}
+                <td class="table-color_2" style="background-color: {{color_2}};"></td>
+                <td class="table-color_1" style="background-color: {{color_1}};"></td>
+            {% endfor %}
 
+            {% if num_cols % 2 != 0 %}
+                <td class="table-color_2" style="background-color: {{color_2}};"></td>
+            {%endif %}
+            </tr>
+        {% endfor %}
+
+        {% if num_rows % 2 != 0 %}
+            <tr>
+            {% for j in range(0, num_cols_half) %}
+                <td class="table-color_1" style="background-color: {{color_1}};"></td>
+                <td class="table-color_2" style="background-color: {{color_2}};"></td>
+            {% endfor %}
+
+            {% if num_cols % 2 != 0 %}
+                <td class="table-color_1" style="background-color: {{color_1}};"></td>
+            {%endif %}
+            </tr>
+        {%endif %}
+    </table>
+
+    <!-- Have the root route render a template with a checkerboard on it.
+    <table>
+        <tr>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+        </tr>
+
+        <tr>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+        </tr>
+
+        <tr>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+        </tr>
+
+        <tr>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+        </tr>
+
+        <tr>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+        </tr>
+
+        <tr>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+        </tr>
+
+        <tr>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+        </tr>
+
+        <tr>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+            <td class="table-black"></td>
+            <td class="table-red"></td>
+        </tr>
+    </table> -->
 </body>
 </html>
