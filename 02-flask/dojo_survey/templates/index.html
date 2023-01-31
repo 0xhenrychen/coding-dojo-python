@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: orange;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        form {
+            background-color: black;
+            width: 600px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 100px;
+            padding: 20px;
+            color: white;
+            
+        }
+
+        label {
+            margin: 10px;
+        }
+
+        textarea {
+            margin: 20px 0;
+        }
+
+        input[type=submit] {
+            padding: 5px 20px;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            border: 0px;
+        }
+    </style>
+    <title>Dojo Survey Index</title>
+</head>
+<body>
+    <form action='/process' method='post'>
+        <h1 style="text-align: center;">Dojo Survey</h1>
+        <div>
+            <label for='name'>Name:</label>
+            <input type='text' class='form-control' name='name' placeholder='Henry Chen'>
+        </div>
+        <div>
+            <label for='dojo'>Dojo Location:</label>
+            <select class='form-control' name='dojo' placeholder='Chicago'>
+                <option value='Chicago'>Chicago</option>
+                <option value='Seattle'>Seattle</option>
+                <option value='Online'>Online</option>
+                <option value='Burbank'>Burbank</option>
+                <option value='Bellevue'>Bellevue</option>
+            </select>
+        </div>
+        <div>
+            <label for='language'>Favorite Language:</label>
+            <select class='form-control' name='language' placeholder='HTML'>
+                <option value='HTML'>HTML</option>
+                <option value='CSS'>CSS</option>
+                <option value='JavaScript'>JavaScript</option>
+                <option value='Python'>Python</option>
+                <option value='C#'>C#</option>
+            </select>
+        </div>
+        <div>
+            <label for='program'>Full or Part-Time:</label><br>
+            <input type='radio' name='program' value='Full-Time'>
+            <label for='Full-Time'>Full-Time</label>
+            <input type='radio' name='program' value='Part-Time'>
+            <label for 'Part-Time'>Part-Time</label>
+        </div>
+        <div>
+            <label for='stack'>Which Stack(s) Are You Interested In:</label><br>
+            <input type='checkbox' name='stack' value='Python'>
+            <label for='Python'>Python</label>
+            <input type='checkbox' name='stack' value='MERN'>
+            <label for 'MERN'>MERN</label>
+            <input type='checkbox' name='stack' value='Java'>
+            <label for 'Java'>Java</label>
+            <input type='checkbox' name='stack' value='C#'>
+            <label for 'C#'>C#</label>
+        </div>
+        <div>
+            <label for='comment'>Comments (Optional):</label>
+            <textarea name='comment' rows='4' cols='50' placeholder='Enter comment here.'></textarea>
+        </div>
+            <input type='submit'>
+    </form>
+</body>
+</html>
