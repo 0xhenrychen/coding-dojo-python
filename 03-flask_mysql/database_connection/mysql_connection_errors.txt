@@ -1,0 +1,1000 @@
+Creating a virtualenv for this project...
+Pipfile: /Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/test_project/Pipfile
+Using /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 (3.11.0) to create virtualenv...
+⠼ Creating virtual environment...created virtual environment CPython3.11.0.final.0-64 in 308ms
+  creator CPython3Posix(dest=/Users/henrychen/.local/share/virtualenvs/test_project-XfzmL18W, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/henrychen/Library/Application Support/virtualenv)
+    added seed packages: pip==22.3.1, setuptools==65.6.3, wheel==0.38.4
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+✔ Successfully created virtual environment!
+Virtualenv location: /Users/henrychen/.local/share/virtualenvs/test_project-XfzmL18W
+Creating a Pipfile for this project...
+Installing flask...
+Pipfile.lock not found, creating...
+Locking [packages] dependencies...
+Locking [dev-packages] dependencies...
+Updated Pipfile.lock (60364d8fec40062cefddf8fc7df3eb90e861b5d9e9b7faf7d5782480799581c9)!
+Installing dependencies from Pipfile.lock (9581c9)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Henrys-iPro-5:test_project henrychen$ ls
+Pipfile         Pipfile.lock
+Henrys-iPro-5:test_project henrychen$ new_project_folder # pipenv install PyMySQL flask
+bash: new_project_folder: command not found
+Henrys-iPro-5:test_project henrychen$ pipenv install PyMySQL flask
+Installing PyMySQL...
+Installing flask...
+Pipfile.lock (9581c9) out of date, updating to (17b445)...
+Locking [packages] dependencies...
+Locking [dev-packages] dependencies...
+Updated Pipfile.lock (640ac4759665acb463b663852a80567e9938cf158cf116e942b2f6b57317b445)!
+Installing dependencies from Pipfile.lock (17b445)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Henrys-iPro-5:test_project henrychen$ ls
+Pipfile         Pipfile.lock
+Henrys-iPro-5:test_project henrychen$ ls
+Pipfile         Pipfile.lock
+Henrys-iPro-5:test_project henrychen$ cd ..
+Henrys-iPro-5:database_connection henrychen$ ls
+first_flask_mysql
+Henrys-iPro-5:database_connection henrychen$ cd first_flask_mysql/
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile         Pipfile.lock
+Henrys-iPro-5:first_flask_mysql henrychen$ touch mysqlconnection.py
+Henrys-iPro-5:first_flask_mysql henrychen$ code mysqlconnection.py 
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile                 Pipfile.lock            mysqlconnection.py
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv install flask PyMySQL
+Creating a virtualenv for this project...
+Pipfile: /Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/Pipfile
+Using /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 (3.11.0) to create virtualenv...
+⠼ Creating virtual environment...created virtual environment CPython3.11.0.final.0-64 in 299ms
+  creator CPython3Posix(dest=/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/henrychen/Library/Application Support/virtualenv)
+    added seed packages: pip==22.3.1, setuptools==65.6.3, wheel==0.38.4
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+✔ Successfully created virtual environment!
+Virtualenv location: /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5
+Installing flask...
+Installing PyMySQL...
+Installing dependencies from Pipfile.lock (17b445)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile                 Pipfile.lock            mysqlconnection.py
+Henrys-iPro-5:first_flask_mysql henrychen$ touch server.py
+Henrys-iPro-5:first_flask_mysql henrychen$ code server.py 
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile                 friend.py               friends.mwb.bak         friends_queries.sql     server.py
+Pipfile.lock            friends.mwb             friends.sql             mysqlconnection.py
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv shell
+Launching subshell in virtual environment...
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$  . /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/bin/activate
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ exit
+exit
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv shell
+Launching subshell in virtual environment...
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$  . /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/bin/activate
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ exit
+exit
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv shell
+Launching subshell in virtual environment...
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$  . /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/bin/activate
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ exit
+exit
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile                 first_flask.mwb         first_flask_queries.sql mysqlconnection.py      templates
+Pipfile.lock            first_flask.sql         friend.py               server.py
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv install flask
+Installing flask...
+Installing dependencies from Pipfile.lock (17b445)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv install flask PyMySQL
+Installing flask...
+Installing PyMySQL...
+Installing dependencies from Pipfile.lock (17b445)...
+To activate this project's virtualenv, run pipenv shell.
+Alternatively, run a command inside the virtualenv with pipenv run.
+Henrys-iPro-5:first_flask_mysql henrychen$ ls
+Pipfile                 first_flask.mwb         first_flask_queries.sql mysqlconnection.py      templates
+Pipfile.lock            first_flask.sql         friend.py               server.py
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv shell
+Launching subshell in virtual environment...
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$  . /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/bin/activate
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 9
+        print(friends)
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 13
+        app.run(debug=True)
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+ImportError: cannot import name 'connectToMySQL' from 'mysqlconnection' (/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py)
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 6
+            # change the user and password as needed
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 6
+            # change the user and password as needed
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 6
+            # change the user and password as needed
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 13
+                                        autocommit = True)
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+Traceback (most recent call last):
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 3, in <module>
+    from friend import Friend
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 2, in <module>
+    from mysqlconnection import connectToMySQL
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 13
+                                        autocommit = True)
+    ^
+SyntaxError: invalid non-printable character U+00A0
+(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5001
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 13:58:51] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 13:58:51] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 13:58:51] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 13:58:51] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 13:58:52] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 13:58:52] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:58:52] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:58:52] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:58:52] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 13:59:14] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 13:59:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:15] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 13:59:15] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:15] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5001
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 13:59:24] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 13:59:24] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:24] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:24] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 13:59:24] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5001
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:00:01] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:00:01] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:00:01] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:00:01] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:00:01] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5005
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:00:44] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 43, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 7, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:00:44] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:00:44] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:00:44] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:00:45] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+^[ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5005
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:08:03] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 42, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 4, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:08:03] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:03] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:03] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:03] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+^C(first_flask_mysql) bash-3.2$ exit
+exit
+Henrys-iPro-5:first_flask_mysql henrychen$ pipenv shell
+Launching subshell in virtual environment...
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$  . /Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/bin/activate
+(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5005
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:08:34] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 42, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 4, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:08:34] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:34] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:34] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+127.0.0.1 - - [31/Jan/2023 14:08:34] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5003
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:09:52] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 42, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 4, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:09:52] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:09:52] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:09:52] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:09:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://localhost:5020
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+127.0.0.1 - - [31/Jan/2023 14:10:13] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 613, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 835, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/server.py", line 8, in index
+    friends = Friend.get_all()
+              ^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py", line 18, in get_all
+    results = connectToMySQL('first_flask').query_db(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 42, in connectToMySQL
+    return MySQLConnection(db)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/mysqlconnection.py", line 4, in __init__
+    connection = pymysql.connect(host = 'localhost',
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 353, in __init__
+    self.connect()
+  File "/Users/henrychen/.local/share/virtualenvs/first_flask_mysql-d3s0rKo5/lib/python3.11/site-packages/pymysql/connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+127.0.0.1 - - [31/Jan/2023 14:10:13] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:10:13] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:10:13] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [31/Jan/2023 14:10:13] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 304 -
+ * Detected change in '/Users/henrychen/Desktop/coding-dojo-local/week-05-12-python/03-flask_mysql/database_connection/first_flask_mysql/friend.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-379-996
+^C(first_flask_mysql) bash-3.2$ 
