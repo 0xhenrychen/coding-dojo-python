@@ -1,4 +1,4 @@
-insert into friends (first_name, last_name, created_at, updated_at)
+insert into friends (first_name, last_name, occupation, created_at, updated_at)
 values("Ellie", "Chen", "student", now(), now());
 
 insert into friends (first_name, last_name, occupation, created_at, updated_at)

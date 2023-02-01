@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS `first_flask`.`friends` (
   `first_name` VARCHAR(255) NULL,
   `last_name` VARCHAR(255) NULL,
   `occupation` VARCHAR(255) NULL,
-  `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL,
+  `created_at` DATETIME NULL DEFAULT now(),
+  `updated_at` DATETIME NULL DEFAULT now(),
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
