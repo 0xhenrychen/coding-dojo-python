@@ -10,4 +10,7 @@ values("David", "Chen", "carpenter", now(), now());
 insert into friends (first_name, last_name, occupation, created_at, updated_at)
 values("Cindy", "Chen", "clerk", now(), now());
 
+insert into friends (first_name, last_name, occupation)
+values("Gonzalo", "Chiu", "engineer");
+
 select * from friends;
