@@ -10,7 +10,7 @@ def main():
         print('Key exists!')
         session["counter"] += 1
     else:
-        print("key 'key_name' does NOT exist")
+        print("key does NOT exist")
         session["counter"] = 0
     return render_template("index.html")
 
@@ -22,7 +22,7 @@ def counter2():
         print('Key exists!')
         session["counter"] += 2
     else:
-        print("key 'key_name' does NOT exist")
+        print("key does NOT exist")
         session["counter"] = 0
     return render_template("index.html")
             
