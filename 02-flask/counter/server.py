@@ -25,7 +25,7 @@ def counter2():
         print("key does NOT exist")
         session["counter"] = 0
     return render_template("index.html")
-            
+
 @app.route('/destroy_session')
 def reset():
     session.clear()
