@@ -25,6 +25,7 @@
                 <th>Last Name</th>
                 <th>Age</th>
                 <th>Dojo</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@
                     <td>{{ ninja.last_name }}</td>
                     <td>{{ ninja.age }}</td>
                     <td>{{ ninja.name }}</td>
+                    <td><a href="/ninjas/edit/{{ninja.id}}">Edit</a> | <a href="/dojos/{{ninja.dojo_id}}/{{ninja.id}}">Delete</a></td>
                 </tr>
             {% endfor %}
         </tbody>

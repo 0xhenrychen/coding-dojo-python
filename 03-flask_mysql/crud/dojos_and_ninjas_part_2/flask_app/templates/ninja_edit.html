@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 1000px;
+            margin-top: 100px;
+        }
+        input[type=text] {
+            margin: 8px 0;
+        }
+    </style>
+    <title>Ninjas And Dojos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Ninja:</h1>
+        <form action="/ninja/edit" method="POST">
+            <div>
+                <input type="hidden" name="ninja_id" value={{ ninja.id }}>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" value="{{ ninja.first_name }}">
+            </div>
+            <div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" value="{{ ninja.last_name }}">
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="text" name="age" value="{{ ninja.age }}">
+            </div>
+            <div>
+                <input type="submit" value="Update">
+            </div>
+        </form>
+        <p><a href="/">Back to Dojo</a></p>
+    </div>
+</body>
+</html>

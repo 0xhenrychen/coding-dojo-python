@@ -14,7 +14,7 @@ class Ninja:
     def get_all_ninjas(cls):
         query = "SELECT * FROM ninjas;"
 
-        results = connectToMySQL('dojos_and_ninjas_schema').query_db(query)
+        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query)
         
         ninjas = []
 
@@ -23,12 +23,32 @@ class Ninja:
         return ninjas
     
     @classmethod
+    def get_ninja_by_id(cls, data):
+        query = "SELECT * FROM ninjas WHERE id = %(id)s;"
+
+        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
+        return cls(results[0])
+    
+    @classmethod
+    def update_ninja(cls, data):
+        query = ''' UPDATE ninjas
+                    SET first_name = %(first_name)s, last_name = %(last_name)s, age = %(age)s, created_at = NOW(), updated_at = NOW()
+                    WHERE ID = %(id)s'''
+        return connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
+    
+    @classmethod
+    def remove_ninja(cls, data):
+        query = "DELETE FROM ninjas WHERE id = %(id)s;"
+
+        return connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
+    
+    @classmethod
     def save_ninja(cls, data):
         query = ''' INSERT
                     INTO ninjas (first_name, last_name, age, dojo_id)
                     VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);
                 '''
-        return connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)
+        return connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
     
     @classmethod
     def get_ninjas_by_dojo(cls, data):
@@ -38,5 +58,5 @@ class Ninja:
                     WHERE dojo_id = %(id)s;
                 '''
                 
-        results = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)    
+        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)    
         return results

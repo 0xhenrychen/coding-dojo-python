@@ -7,9 +7,8 @@ from flask_app.models.dojo import Dojo
 def index():
     dojos = Dojo.get_all_dojos()
     ninjas = Ninja.get_all_ninjas()
-    
-    print("all ninjas", ninjas)
-    # print("printing the city name", ninjas[0]['first_name'])
+    print(">>> All dojos:",dojos)
+    print(">>> All ninjas:",ninjas)
     return render_template("index.html", dojos = dojos, ninjas = ninjas)
     # return redirect("/dojos")
 
@@ -49,3 +48,35 @@ def create_ninja():
     }
     Ninja.save_ninja(data)
     return redirect("/")
+
+@app.route("/ninjas/edit/<int:ninja_id>")
+def edit_page(ninja_id):
+    data = {
+                "id": ninja_id
+    }
+    this_ninja = Ninja.get_ninja_by_id(data)
+    return render_template("ninja_edit.html", ninja = this_ninja)
+
+@app.route("/ninja/edit", methods=["POST"])
+def edit_ninja():
+    data = {
+            "id": request.form["ninja_id"],
+            "first_name": request.form["first_name"],
+            "last_name": request.form["last_name"],
+            "age": request.form["age"]
+        }
+    Ninja.update_ninja(data)
+    
+    # dojo_by_ninja = Dojo.get_dojo_by_ninja(id)
+    # print(">>>results",dojo_by_ninja)
+    
+    return redirect(f'/dojos')
+    # return redirect(f'/dojos/{dojo_id}')
+
+@app.route("/dojos/<int:dojo_id>/<int:ninja_id>")
+def delete_ninja(dojo_id, ninja_id):
+    data = {
+    "id": ninja_id
+    }
+    Ninja.remove_ninja(data)
+    return redirect(f'/dojos')
