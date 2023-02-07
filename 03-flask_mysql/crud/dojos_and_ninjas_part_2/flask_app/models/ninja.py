@@ -9,6 +9,7 @@ class Ninja:
         self.age = data['age']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
+        self.dojo_id = data['dojo_id']
     
     @classmethod
     def get_all_ninjas(cls):
@@ -57,6 +58,5 @@ class Ninja:
                     ON ninjas.dojo_id = dojos.id
                     WHERE dojo_id = %(id)s;
                 '''
-                
-        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)    
+        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)  
         return results

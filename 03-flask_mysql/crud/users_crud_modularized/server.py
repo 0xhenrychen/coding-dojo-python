@@ -7,4 +7,4 @@ from flask_app.controllers import users
 # don't need - app = Flask(__name__)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='localhost', port=5008)
+    app.run(debug=True, host='localhost', port=5006)

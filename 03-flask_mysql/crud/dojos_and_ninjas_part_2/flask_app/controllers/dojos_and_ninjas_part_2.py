@@ -5,10 +5,11 @@ from flask_app.models.dojo import Dojo
 
 @app.route("/")
 def index():
+    # Currently not working, try using session.
     dojos = Dojo.get_all_dojos()
+    
     ninjas = Ninja.get_all_ninjas()
-    print(">>> All dojos:",dojos)
-    print(">>> All ninjas:",ninjas)
+    
     return render_template("index.html", dojos = dojos, ninjas = ninjas)
     # return redirect("/dojos")
 
@@ -60,18 +61,13 @@ def edit_page(ninja_id):
 @app.route("/ninja/edit", methods=["POST"])
 def edit_ninja():
     data = {
-            "id": request.form["ninja_id"],
             "first_name": request.form["first_name"],
             "last_name": request.form["last_name"],
-            "age": request.form["age"]
+            "age": request.form["age"],
+            "dojo_id": request.form["dojo_id"]
         }
     Ninja.update_ninja(data)
-    
-    # dojo_by_ninja = Dojo.get_dojo_by_ninja(id)
-    # print(">>>results",dojo_by_ninja)
-    
-    return redirect(f'/dojos')
-    # return redirect(f'/dojos/{dojo_id}')
+    return redirect(f'/dojos/{data["dojo_id"]}')
 
 @app.route("/dojos/<int:dojo_id>/<int:ninja_id>")
 def delete_ninja(dojo_id, ninja_id):

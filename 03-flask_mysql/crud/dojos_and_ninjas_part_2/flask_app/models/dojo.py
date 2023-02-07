@@ -30,14 +30,14 @@ class Dojo:
                 '''
         return connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
     
-    # !!! Currently not able to get dojo by a particular ninja.
-    @classmethod
-    def get_dojo_by_ninja(cls, data):
-        print("ID is: ", data)
-        query = ''' SELECT * FROM dojos
-                    LEFT JOIN ninjas
-                    ON ninjas.dojo_id = dojos.id
-                    WHERE ninjas.id = %(id)s;
-                '''
-        results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
-        return cls(results[0])
+    # # !!! Currently not able to get dojo by a particular ninja.
+    # @classmethod
+    # def get_dojo_by_ninja(cls, data):
+        
+    #     query = ''' SELECT * FROM dojos
+    #                 LEFT JOIN ninjas
+    #                 ON ninjas.dojo_id = dojos.id
+    #                 WHERE dojo.id = %(id)s;
+    #             '''
+    #     results = connectToMySQL('dojos_and_ninjas_part_2_schema').query_db(query, data)
+    #     return cls(results[0])
