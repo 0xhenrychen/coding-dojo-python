@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models.user import User
+from flask_app.models import user
 
 @app.route("/")
 def index_page():
@@ -34,9 +34,9 @@ def register_form():
     session["email"] = request.form["email"]
     session["first_name"] = request.form["first_name"]
     
-    if not User.validate_user_register(data):
+    if not user.User.validate_user_register(data):
         return redirect("/")
-    User.save_user(data)
+    user.User.save_user(data)
     return redirect("/dashboard")
 
 @app.route("/login", methods=["POST"])
@@ -45,9 +45,9 @@ def login_form():
                 "email": request.form["email"],
                 "password3": request.form["password3"]
             }
-    if not User.validate_user_login(data):
+    if not user.User.validate_user_login(data):
         return redirect("/")
-    this_user = User.get_user_by_email(data)
+    this_user = user.User.get_user_by_email(data)
     session["first_name"] = this_user["first_name"]
     return redirect(f'/dashboard')
 

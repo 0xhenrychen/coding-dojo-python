@@ -32,7 +32,7 @@ class User:
         results = connectToMySQL(my_database).query_db(query, data)
         return results[0]
     
-        # @classmethod
+    # @classmethod
     # def get_all(cls):
     #     query = ''' SELECT * FROM orders;
     #             '''

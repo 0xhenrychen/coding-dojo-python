@@ -75,7 +75,6 @@ class User:
                     WHERE email = %(email)s'''
         
         results = connectToMySQL('users_schema').query_db(query, user)
-        # print(">>>query results[0] is:",results)
         
         if results != ():
             flash("That email address already exits. Please enter a new one.")
