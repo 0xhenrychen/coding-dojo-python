@@ -17,6 +17,6 @@ SELECT * FROM users
 JOIN recipes ON users.id = recipes.users_id
 WHERE recipes.id = 1;
 
-SELECT * FROM users;
+SELECT * FROM recipes;
 
 		
