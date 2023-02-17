@@ -13,9 +13,6 @@ class User:
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
-        self.password1 = data['password1']
-        self.password2 = data['password2']
-        self.password3 = data['password3']
         self.password = data['password']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
@@ -30,6 +27,14 @@ class User:
         return results[0]
     
     @classmethod
+    def get_user_by_id(cls, data):
+        query = ''' SELECT * FROM users
+                    WHERE ID = %(user_id)s;
+                '''
+        results = connectToMySQL(database).query_db(query, data)
+        return results[0]
+    
+    @classmethod
     def save(cls, data):
         query = ''' INSERT INTO users (first_name, last_name, email, password)
                     VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);
@@ -37,20 +42,27 @@ class User:
         results = connectToMySQL(database).query_db(query, data)
         return results
     
-    @classmethod
-    def connect_recipes_to_users_join(cls):
-        query = '''
-                    SELECT * FROM users
-                    JOIN recipes ON recipes.users_id = users.id
-                '''
-        results = connectToMySQL(database).query_db(query)
-        return results
+    # @classmethod
+    # def get_passenger_by_id(cls, data):
+    #     query = ''' SELECT * FROM users
+    #                 JOIN rides on users.id = rides.passenger_id
+    #                 WHERE passenger_id = %(passenger_id)s;
+    #             '''
+    #     results = connectToMySQL(database).query_db(query, data)
+    #     return results[0]
+    
+    # @classmethod
+    # def get_driver_by_id(cls, data):
+    #     query = ''' SELECT * FROM users
+    #                 JOIN rides on users.id = rides.driver_id
+    #                 WHERE driver_id = %(user_id)s;
+    #             '''
+    #     results = connectToMySQL(database).query_db(query, data)
+    #     return results[0]
     
     @staticmethod
     def validate_user_register_form(user):
         is_valid = True
-        # password_has_uppercase = False
-        # password_has_number = False
         
         if len(user["first_name"]) < 2:
             flash("First name must be at least 2 letters.", "register")
@@ -73,11 +85,11 @@ class User:
         if len(user["password1"]) < 1:
             flash("Please create a password.", "register")
             is_valid = False
-        if len(user["password1"]) and len(user["password2"]) < 8:
-            flash("Password must be at least 8 characters.", "register")
-            is_valid = False
         if user["password1"] != user["password2"]:
             flash("Passwords are not equal to each other.", "register")
+            is_valid = False
+        elif len(user["password1"]) and len(user["password2"]) < 8:
+            flash("Password must be at least 8 characters.", "register")
             is_valid = False
             
         # for letter in user["password1"]:

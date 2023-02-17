@@ -6,16 +6,10 @@ from flask_app.models import user, ride
 def rides_all_page():
     if "user_id" not in session:
         return redirect("/")
-    rides_with_passengers = ride.Ride.connect_passengers_to_rides_join()
-    return render_template("rides.html", rides = rides_with_passengers)
-
-# @app.route("/recipes/view/<int:recipe_id>")
-# def recipe_single_page(recipe_id):
-#     data = {
-#                 "id": recipe_id
-#     }
-#     one_recipe_with_user = recipe.Recipe.connect_user_to_recipe_join(data)
-#     return render_template("recipe_view.html", recipe = one_recipe_with_user)
+    this_user = user.User.get_user_by_id({"user_id": session["user_id"]})
+    request_rides = ride.Ride.get_all_with_no_driver()
+    booked_rides = ride.Ride.get_all_with_driver()
+    return render_template("rides.html", user = this_user, requests = request_rides, booked = booked_rides)
 
 @app.route("/rides/new")
 def create_ride_page():
@@ -23,23 +17,49 @@ def create_ride_page():
         return redirect("/")
     return render_template("ride_request.html")
 
-# @app.route("/recipes/edit/<int:recipe_id>")
-# def update_recipe_page(recipe_id):
-#     if "first_name" not in session:
-#         return redirect("/")
-#     data = {
-#                 "id": recipe_id
-#     }
-#     one_recipe = recipe.Recipe.get_recipe_by_id(data)
-#     return render_template("recipe_edit.html", recipe = one_recipe)
+@app.route("/rides/driver/<int:ride_id>")
+def assign_driver_to_ride(ride_id):
+    if "user_id" not in session:
+        return redirect("/")
+    data = {
+            "ride_id": ride_id,
+            "driver_id": session["user_id"]
+    }
+    ride.Ride.assign_driver_to_ride(data)
+    return redirect("/rides/dashboard")
 
-# @app.route("/recipes/delete/<int:recipe_id>")
-# def delete_recipe(recipe_id):
-#     data = {
-#                 "id": recipe_id
-#     }
-#     recipe.Recipe.delete(data)
-#     return redirect("/recipes")
+@app.route("/rides/details/<int:ride_id>")
+def view_ride_page(ride_id):
+    if "user_id" not in session:
+        return redirect("/")
+    this_ride = ride.Ride.get_ride_and_driver_by_id({"ride_id": ride_id})
+    return render_template("ride_view.html", ride = this_ride)
+
+@app.route("/rides/cancel/<int:ride_id>")
+def cancel_ride(ride_id):
+    data = {
+                "ride_id": ride_id,
+                "driver_id": None
+    }
+    ride.Ride.remove_driver_from_ride(data)
+    return redirect("/rides/dashboard")
+
+@app.route("/rides/edit/<int:ride_id>")
+def edit_ride_page(ride_id):
+    print("does it make it here")
+    if "user_id" not in session:
+        return redirect("/")
+    print("does it make it here")
+    this_ride = ride.Ride.get_ride_and_driver_by_id({"ride_id": ride_id})
+    return render_template("ride_edit.html", ride = this_ride)
+
+@app.route("/rides/delete/<int:ride_id>")
+def delete_ride(ride_id):
+    data = {
+                "id": ride_id
+    }
+    ride.Ride.delete(data)
+    return redirect("/rides/dashboard")
 
 @app.route("/create_ride_form", methods=["POST"])
 def create_ride_form():
@@ -50,26 +70,21 @@ def create_ride_form():
             "details": request.form["details"],
             "user_id": session["user_id"]
     }
-    print("this is the data:", data)
     if not ride.Ride.validate_create_ride_form(data):
         return redirect("/rides/new")
-    
-    # this_user = user.User.get_user_by_email(email)
-    # data["user_id"] = this_user["id"]
     ride.Ride.save(data)
     return redirect("/rides/dashboard")
 
-# @app.route("/update_recipe_form", methods=["POST"])
-# def update_recipe_form():
-#     data = {
-#             "id": request.form["id"],
-#             "name": request.form["name"],
-#             "description": request.form["description"],
-#             "instructions": request.form["instructions"],
-#             "date": request.form["date"],
-#             "under_30_mins": request.form["under_30_mins"]
-#     }
-#     if not recipe.Recipe.validate_create_recipe_form(data):
-#         return redirect("/recipes/update")
-#     recipe.Recipe.edit(data)
-#     return redirect("/recipes")
+@app.route("/edit_ride_form", methods=["POST"])
+def edit_ride_form():
+    data = {
+            "destination": request.form["destination"],
+            "pick_up_location": request.form["pick_up_location"],
+            "rideshare_date": request.form["rideshare_date"],
+            "details": request.form["details"],
+            "user_id": session["user_id"]
+    }
+    if not ride.Ride.validate_create_ride_form(data):
+        return redirect("/rides/new")
+    ride.Ride.save(data)
+    return redirect("/rides/dashboard")

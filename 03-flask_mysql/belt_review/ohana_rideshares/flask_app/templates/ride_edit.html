@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-    <h2>{{ session["first_name"] }}, Request A Ride</h2>
+    <h2>{{ session["first_name"] }}, Update the Details!</h2>
     <p><a href="/rides/dashboard">Home</a> | <a href="/logout">Log Out</a></p>
     {% with messages = get_flashed_messages(category_filter=["ride"]) %}
         {% if messages %}
@@ -49,23 +49,23 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    <form action="/create_ride_form" method="POST">
+    <form action="/edit_ride_form" method="POST">
         <div class="container">
             <div>
                 <label for="destination">Destination:</label>
-                <input type="text" name="destination">
+                <input type="text" name="destination" value="{{ ride.destination }}">
             </div>
             <div>
                 <label for="pick_up_location">Pick-Up Location:</label>
-                <input type="text" name="pick_up_location">
+                <input type="text" name="pick_up_location" value="{{ ride.pick_up_location }}">
             </div>
             <div>
                 <label for="rideshare_date">Rideshare Date:</label>
-                <input type="date" name="rideshare_date">
+                <input type="date" name="rideshare_date" value="{{ ride.rideshare_date }}">
             </div>
             <div>
                 <label for="details">Details:</label>
-                <textarea name="details" cols="40" rows="10"></textarea>
+                <textarea name="details" cols="40" rows="10">{{ ride.details }}</textarea>
             </div>
             <div>
                 <input type="submit" value="Submit">

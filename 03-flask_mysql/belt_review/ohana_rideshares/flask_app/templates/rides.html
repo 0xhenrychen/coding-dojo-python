@@ -17,12 +17,12 @@
         }
 
         .container {
-            width: 2000px;
             display: flex;
             justify-content: space-evenly;
+            width: 1000px;
         }
 
-        .rideshare_requests {
+        .container_ride {
             border: 1px solid black;
             margin: 10px auto;
             padding: 5px;
@@ -31,22 +31,44 @@
 </head>
 <body>
     <h2>Welcome, {{ session["first_name"] }}!</h2>
-    <p><a href="/rides/new">+Request A Ride</a> <a href="/logout">Log Out</a></p>
+    <p><a href="/rides/new">+Request A Ride</a> | <a href="/logout">Log Out</a></p>
     <div class="container">
-        <div class="container_left">
+        <div class="container_requests">
             <h2>Rideshare Requests</h2>
-                {% for ride in rides %}
-                    <div class="rideshare_requests">
-                        <p>Rider: {{ ride.first_name }} {{ ride.last_name }}</p>
-                        <p>Destination: {{ride.destination }}</p>
-                        <p>When needed: {{ride.rideshare_date }}</p>
-                        <p>DELETE or I can drive!</p>
-                    </div> 
-                {% endfor %}
-        </div> 
-
-        <div class="container_right">
+            {% for ride in requests %}
+                <div class="container_ride">
+                    <p>Rider: {{ ride.passenger.first_name }} {{ ride.passenger.last_name }}</p>
+                    <p>Destination: {{ride.destination }}</p>
+                    <p>When needed: {{ride.rideshare_date }}</p>
+                    {% if ride.passenger_id == session["user_id"] %}
+                        <p><a href="/rides/delete/{{ride.id}}">DELETE</a></p>
+                    {% else %}
+                        <p><a href="/rides/driver/{{ride.id}}">I Can Drive!</a></p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="container_booked">
             <h2>Booked Rideshares</h2>
+            {% for ride in booked %}
+                
+                    {% if ride.passenger.id == session["user_id"] %}
+                        <div class="container_ride" style="background-color:khaki";>
+                            <p><b>You</b> are riding with <b>{{ ride.driver.first_name }} {{ ride.driver.last_name }}</b> to {{ ride.destination }} on {{ ride.rideshare_date }}.</p>
+                            <p><a href="/rides/details/{{ride.id}}">Details</a></p>
+                        </div>
+                    {% elif ride.driver.id == session["user_id"] %}
+                        <div class="container_ride" style="background-color:bisque";>
+                            <p><b>You</b> are driving <b>{{ ride.passenger.first_name }} {{ ride.passenger.last_name }}</b> to {{ ride.destination }} on {{ ride.rideshare_date }}.</p>
+                            <p><a href="/rides/details/{{ride.id}}">Details</a> | <a href="/rides/cancel/{{ride.id}}">Cancel</a></p>
+                        </div>
+                    {% else %}
+                        <div class="container_ride">
+                            <p><b>{{ ride.driver.first_name }} {{ ride.driver.last_name }}</b> is driving <b>{{ ride.passenger.first_name }} {{ ride.passenger.last_name }}</b> to {{ ride.destination }} on {{ ride.rideshare_date }}.</p>
+                        </div>
+                    {% endif %}
+                
+            {% endfor %}
         </div>
     </div>
 </body>

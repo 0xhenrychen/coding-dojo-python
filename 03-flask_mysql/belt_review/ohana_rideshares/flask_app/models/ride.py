@@ -15,18 +15,111 @@ class Ride:
         self.updated_at = data["updated_at"]
         self.passenger_id = data["passenger_id"]
         self.driver_id = data["driver_id"]
-        self.creator = None
-        
+        self.passenger = None
+        self.driver = None
+    
     @classmethod
-    def get_all(cls):
-        query = '''
-                    SELECT * FROM recipes;
+    def get_all_with_no_driver(cls):
+        query = ''' SELECT * FROM rides
+                    JOIN users ON users.id = rides.passenger_id
+                    WHERE rides.driver_id IS NULL;
                 '''
         results = connectToMySQL(database).query_db(query)
-        recipes = []
-        for recipe in results:
-            recipes.append(cls(recipe))
-        return recipes
+        output = []
+        for row in results:
+            this_ride = cls(row)
+            
+            user_data = {
+                "id": row["users.id"],
+                "first_name": row["first_name"],
+                "last_name": row["last_name"],
+                "email": row["email"],
+                "password": row["password"],
+                "created_at": row["users.created_at"],
+                "updated_at": row["users.updated_at"]
+            }
+            user_passenger = user.User(user_data)
+            this_ride.passenger = user_passenger
+            output.append(this_ride)
+        return output
+    
+    @classmethod
+    def get_all_with_driver(cls):
+        query = ''' SELECT * FROM rides R
+                    JOIN users UP ON UP.id = R.passenger_id
+                    JOIN users UD ON UD.id = R.driver_id;
+            '''
+        results = connectToMySQL(database).query_db(query)
+        output = []
+        for row in results:
+            this_ride = cls(row)
+            
+            passenger_data = {
+                "id": row["UP.id"],
+                "first_name": row["first_name"],
+                "last_name": row["last_name"],
+                "email": row["email"],
+                "password": row["password"],
+                "created_at": row["UP.created_at"],
+                "updated_at": row["UP.updated_at"]
+            }
+            
+            user_passenger = user.User(passenger_data)
+            this_ride.passenger = user_passenger
+            
+            driver_data = {
+                "id": row["UD.id"],
+                "first_name": row["UD.first_name"],
+                "last_name": row["UD.last_name"],
+                "email": row["email"],
+                "password": row["password"],
+                "created_at": row["UD.created_at"],
+                "updated_at": row["UD.updated_at"]
+            }
+            
+            user_driver = user.User(driver_data)
+            this_ride.driver = user_driver
+            
+            output.append(this_ride)
+        return output
+    
+    @classmethod
+    def get_ride_and_driver_by_id(cls, data):
+        query = ''' SELECT * FROM rides R
+                    JOIN users UP ON UP.id = R.passenger_id
+                    JOIN users UD ON UD.id = R.driver_id
+                    WHERE R.id = %(ride_id)s;
+                '''
+        results = connectToMySQL(database).query_db(query, data)
+        this_ride = cls(results[0])
+        for row in results:
+            passenger_data = {
+                "id": row["UP.id"],
+                "first_name": row["first_name"],
+                "last_name": row["last_name"],
+                "email": row["email"],
+                "password": row["password"],
+                "created_at": row["UP.created_at"],
+                "updated_at": row["UP.updated_at"]
+            }
+            
+            user_passenger = user.User(passenger_data)
+            this_ride.passenger = user_passenger
+            
+            driver_data = {
+                "id": row["UD.id"],
+                "first_name": row["UD.first_name"],
+                "last_name": row["UD.last_name"],
+                "email": row["email"],
+                "password": row["password"],
+                "created_at": row["UD.created_at"],
+                "updated_at": row["UD.updated_at"]
+            }
+            
+            user_driver = user.User(driver_data)
+            this_ride.driver = user_driver
+            
+        return this_ride
     
     @classmethod
     def save(cls, data):
@@ -35,76 +128,39 @@ class Ride:
                     VALUES (%(destination)s, %(pick_up_location)s, %(rideshare_date)s, %(details)s, %(user_id)s);
                 '''
         connectToMySQL(database).query_db(query, data)
-
-    # @classmethod
-    # def edit(cls, data):
-    #     query = ''' UPDATE recipes
-    #                 SET name = %(name)s, description = %(description)s, instructions = %(instructions)s, date = %(date)s, under_30_mins = %(under_30_mins)s
-    #                 WHERE ID = %(id)s;
-    #             '''
-    #     results = connectToMySQL(database).query_db(query, data)
-    #     return results
-    
-    # @classmethod
-    # def delete(cls, data):
-    #     query = ''' DELETE FROM recipes
-    #         WHERE ID = %(id)s;
-    #     '''
-    #     connectToMySQL(database).query_db(query, data)
-        
-    # @classmethod
-    # def get_recipe_by_id(cls, data):
-    #     query = ''' SELECT * FROM recipes
-    #                 WHERE ID = %(id)s;
-    #             '''
-    #     results = connectToMySQL(database).query_db(query, data)
-    #     return results[0]
     
     @classmethod
-    def connect_passengers_to_rides_join(cls):
-        query = '''
-                    SELECT * FROM rides
-                    JOIN users ON users.id = rides.passenger_id
+    def assign_driver_to_ride(cls, data):
+        query = ''' UPDATE rides
+                    SET driver_id = %(driver_id)s
+                    WHERE id = %(ride_id)s;
                 '''
-        results = connectToMySQL(database).query_db(query)
+        connectToMySQL(database).query_db(query, data)
+        
+    @classmethod
+    def remove_driver_from_ride(cls, data):
+        query = ''' UPDATE rides
+                    SET driver_id = %(driver_id)s
+                    WHERE id = %(ride_id)s;
+                '''
+        connectToMySQL(database).query_db(query, data)
+        
+    @classmethod
+    def edit(cls, data):
+        query = ''' UPDATE rides
+                    SET destination = %(destination)s, pick_up_location = %(pick_up_location)s, rideshare_date = %(ridesare_date)s, details = %(details)s
+                    WHERE ID = %(ride_id)s;
+                '''
+        results = connectToMySQL(database).query_db(query, data)
         return results
+        
+    @classmethod
+    def delete(cls, data):
+        query = ''' DELETE FROM rides
+            WHERE ID = %(id)s;
+        '''
+        connectToMySQL(database).query_db(query, data)
     
-    # @classmethod
-    # def connect_user_to_recipe_join(cls, data):
-    #     query = '''
-    #                 SELECT * FROM users
-    #                 JOIN recipes ON users.id = recipes.users_id
-    #                 WHERE recipes.id = %(id)s;
-    #             '''
-    #     results = connectToMySQL(database).query_db(query, data)
-    #     return results[0]
-    
-    # @classmethod
-    # def get_all_recipes_by_user_join(cls, data):
-    #     query = '''
-    #                 SELECT * FROM recipes
-    #                 JOIN users ON users.id = recipes.users_id
-    #                 WHERE recipes.users_id = %(id)s;
-    #             '''
-    #     results = connectToMySQL(database).query_db(query, data)
-    #     output = []
-    #     for row in results:
-    #         this_recipe = cls(row)
-            
-    #         user_data = {
-    #             "id": row["users.id"],
-    #             "first_name": row["first_name"],
-    #             "last_name": row["last_name"],
-    #             "email": row["email"],
-    #             "created_at": row["users.created_at"],
-    #             "updated_at": row["users.updated_at"]
-    #         }
-            
-    #         this_recipe.creator = user.User(user_data)
-    #         output.append(this_recipe)
-    #     return output
-    
-    # Validate create recipe form.
     @staticmethod
     def validate_create_ride_form(ride):
         is_valid = True
