@@ -5,6 +5,8 @@ from datetime import datetime
 from flask_bcrypt import Bcrypt        
 bcrypt = Bcrypt(app)
 
+# dateFormat = "%#m/%#d/%Y %I:%M %p"
+
 @app.route("/")
 def index_page():
     return render_template("login.html")
