@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+form {
+    padding: 20px;
+    color: black;
+    
+}
+
+label {
+    margin: 10px;
+}
+
+input[type=submit] {
+    padding: 5px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.container {
+    width: 2000px;
+    display: flex;
+    justify-content: space-evenly;
+}
