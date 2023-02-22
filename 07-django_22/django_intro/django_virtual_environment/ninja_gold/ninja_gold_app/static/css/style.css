@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+.building-container {
+    margin-bottom: 50px;
+}
+
+.text-border {
+        border: 2px solid red;
+        padding: 2px 50px;
+}
+
+.card {
+    padding: 20px;
+}
