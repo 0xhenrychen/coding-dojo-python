@@ -1,0 +1,22 @@
+* {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+.container_bottom {
+    text-align: center;
+}
+
+.container_bottom ul {
+    list-style-type: none;
+}
+
+h2 {
+    color:chocolate;
+}
