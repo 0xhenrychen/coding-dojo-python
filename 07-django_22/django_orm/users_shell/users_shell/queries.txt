@@ -1,0 +1,44 @@
+class User(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email_address = models.CharField(max_length=255)
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+### Query: Create 3 new users
+
+user_1 = User.objects.create(first_name = "Henry", last_name = "Chen", email_address = "henrychen@gmail.com", age = 39)
+user_2 = User.objects.create(first_name = "Charlene", last_name = "Chiu", email_address = "charlenechiu@gmail.com", age = 40)
+user_3 = User.objects.create(first_name = "Ellie", last_name = "Chen", email_address = "elliechen@gmail.com", age = 5)
+
+### Query: Retrieve all the users
+
+all_users = User.objects.all()
+
+### Query: Retrieve the last user
+
+last_user = User.objects.last()
+
+### Query: Retrieve the first user
+
+first_user = User.objects.first()
+
+### Query: Change the user with id=3 so their last name is Pancakes.
+
+user_to_update = User.objects.get(id = 3)
+user_to_update.last_name = "Pancakes"
+user_3.last_name = "Pancakes"
+
+### Query: Delete the user with id=2 from the database
+
+user_to_delete = User.objects.get(id = 2)
+user_to_delete.delete()
+
+### Query: Get all the users, sorted by their first name
+
+all_users_by_first_name_ascending = User.objects.all().order_by("first_name")
+
+### BONUS Query: Get all the users, sorted by their first name in descending order
+
+all_users_by_first_name_descending = User.objects.all().order_by("-first_name")
