@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .models import Movie
+from .models import Dojo, Ninja
 
 def index(request):
     context = {
-        "all_the_movies": Movie.objects.all()
+        "all_dojos": Dojo.objects.all()
     }
     return render(request, "index.html", context)
     
