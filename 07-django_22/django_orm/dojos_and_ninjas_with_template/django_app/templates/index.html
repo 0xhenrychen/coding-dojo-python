@@ -64,7 +64,7 @@
             {% for dojo in all_dojos %}
                 <li><b>{{ dojo.name }}</b></li>
                 <ul>
-                    {% for ninja in all_ninjas %} <!-- How to show ninjas in each dojo? -->
+                    {% for ninja in dojo.ninjas.all %}
                         <li>{{ ninja.first_name }} {{ ninja.last_name }}</li>
                     {% endfor %}
                 </ul>
