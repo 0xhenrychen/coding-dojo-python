@@ -13,7 +13,25 @@
     <div class="container_book">
         <h2>Author: {{ this_author.first_name }} {{ this_author.last_name }}</h2>
         <h3>ID: {{ this_author.id }}</h3>
-        <p>Description: {{ this_author.notes }}</p>
+        <p>Notes: {{ this_author.notes }}</p>
+    </div>
+    <div>
+        <h3>Books:</h3>
+        <ul>
+        {% for book in all_books_for_this_author %}
+            <li><a href="/books/{{ book.id }}">{{ book.title }}</a></li>
+        {% endfor %}
+        </ul>
+        <form action="/add_book_to_author_form/{{ this_author.id }}" method="POST">
+            {% csrf_token %}
+            <label for="authors">Books</label>
+            <select class='form-control' name="book_id">
+                {% for book in all_books %}
+                <option value="{{ book.id }}" name="book_id">{{ book.title }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Add">
+        </form>
     </div>
 </body>
 </html>
