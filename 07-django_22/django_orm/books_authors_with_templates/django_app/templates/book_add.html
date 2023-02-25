@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Books And Authors With Templates</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_left">
+            <h2>Add a Book</h2>
+            <form action="/add_book_form" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <input type="text" name="description" class="form-control">
+                </div>
+                <div>
+                    <input type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+        <div class="container_right">
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for book in all_books %}
+                    <tr>
+                        <td>{{ book.id }}</td>
+                        <td>{{ book.title }}</td>
+                        <td><a href="/books/{{ book.id }}">View</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

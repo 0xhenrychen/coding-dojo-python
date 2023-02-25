@@ -13,3 +13,69 @@ emily_dickinson = Author.objects.create(first_name="Emily", last_name="Dickinson
 fyodor_dostoevsky = Author.objects.create(first_name="Fyodor", last_name="Dostoevsky")
 william_shakespeare = Author.objects.create(first_name="William", last_name="Shakespeare")
 lau_tzu = Author.objects.create(first_name="Lau", last_name="Tzu")
+
+### Query: Change the name of the C Sharp book to C#
+
+c_sharp = Book.objects.get(id=2)
+c_sharp.title = "C#"
+
+### Query: Change the first name of the 4th author to Bill
+
+william_shakespeare = Author.objects.get(id=5)
+william_shakespeare.first_name = "Bill"
+
+### Query: Assign the first author to the first 2 books
+
+book_1 = Book.objects.get(id=2)
+book_2 = Book.objects.get(id=3)
+author_1 = Author.objects.get(id=2)
+author_1_book_1 = author_1.books.add(book_1)
+author_1_book_2 = author_1.books.add(book_2)
+
+### Query: Assign the second author to the first 3 books
+
+book_3 = Book.objects.get(id=4)
+author_2 = Author.objects.get(id=3)
+author_2_book_1 = author_2.books.add(book_1)
+author_2_book_2 = author_2.books.add(book_2)
+author_2_book_3 = author_2.books.add(book_3)
+
+### Query: Assign the third author to the first 4 books
+
+book_4 = Book.objects.get(id=5)
+author_3 = Author.objects.get(id=4)
+author_3_book_1 = author_3.books.add(book_1)
+author_3_book_2 = author_3.books.add(book_2)
+author_3_book_3 = author_3.books.add(book_3)
+author_3_book_4 = author_3.books.add(book_4)
+
+### Query: Assign the fourth author to the first 5 books (or in other words, all the books)
+
+book_5 = Book.objects.get(id=6)
+author_4 = Author.objects.get(id=5)
+author_4_book_1 = author_4.books.add(book_1)
+author_4_book_2 = author_4.books.add(book_2)
+author_4_book_3 = author_4.books.add(book_3)
+author_4_book_4 = author_4.books.add(book_4)
+author_4_book_5 = author_4.books.add(book_5)
+
+### Query: Retrieve all the authors for the 3rd book
+
+authors_book_3 = book_3.authors.all()
+
+### Query: Remove the first author of the 3rd book
+
+author_1.books.remove(book_3)
+
+### Query: Add the 5th author as one of the authors of the 2nd book
+
+author_5 = Author.objects.get(id=6)
+author_5_book_2 = author_5.books.add(book_2)
+
+### Query: Find all the books that the 3rd author is part of
+
+books_author_3 = author_3.books.all()
+
+### Query: Find all the authors that contributed to the 5th book
+
+authors_book_5 = book_5.authors.all()
